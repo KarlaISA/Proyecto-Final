@@ -2,7 +2,7 @@
 #Karla Ivonne Serrano Arevalo
 #Luis Carlos Castro
 
-
+#aqui inicializamos las variables nombre y etiqueta
 class Imagen:
     def __init__(self,nombre, etiqueta):
         self.nombre = nombre 
