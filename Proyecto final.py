@@ -21,7 +21,7 @@ class Imagen:
        return Imagen
 
 
-#Comprobamos si carpetas dentro de la carpeta:
+#Para comprobar si hay algina carpeta dentro de las carpetas y siga buscando:
 def comprobar_carpeta(path_carpeta):
   path_carpetas = []
   path_carpetas.append(path_carpeta)
@@ -31,8 +31,6 @@ def comprobar_carpeta(path_carpeta):
         path_carpetas.append(path_carpeta+"/"+i)
   return path_carpeta
 
-
-#
 def nom_files(path_carpeta):
     nom_img_temp = os.listdir(path_carpeta)
     nom_img = []
@@ -41,8 +39,25 @@ def nom_files(path_carpeta):
             nom_img.append(i)
     return nom_img
 
-###########################################################
-##esto es lo que agregue nuevo XD no mas
+def crear_ob_img(nom_img,path_carpeta):
+    num = 1
+    ob_img = []
+    for i in nom_img:
+        imagen = Imagen()
+        imagen.nom = i
+        imagen.ruta = path_carpeta + '/' + i
+        imagen.num = num
+        ob_img.append(imagen)
+        num = num + 1
+    return ob_img
+
+
+def tag(numID,tag,ob_img):
+    if tag != '':
+        for i in ob_img:
+            if i.num == numID:
+                i.tags.append(tag)
+
 #aqui es la interfaz del programa
 from Tkinter import *
 import Image, ImageTk, os
