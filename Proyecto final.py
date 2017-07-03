@@ -57,6 +57,8 @@ def tag(numID,tag,ob_img):
         for i in ob_img:
             if i.num == numID:
                 i.tags.append(tag)
+                
+                
 
 #aqui es la interfaz del programa
 from Tkinter import *
@@ -101,3 +103,47 @@ root = Tk()
 root.title('Album de Imagenes')
 scrapbook = directorio(root)
 root.mainloop()
+
+#Ruta de imagenes 
+import os
+from os import walk
+from PIL import Image
+from os import walk
+
+
+ruta_deimagenes = os.getcwd() 
+contenido = os.listdir(ruta_deimagenes)
+print (contenido)
+for (ruta,carpeta,imagen) in os.walk(ruta_deimagenes):
+    Lista_imagenes= []
+    print (Lista_imagenes)
+    lista=[]
+    for i in (contenido):
+           if i.endswith(('.png', '.pnj', '.gif')):
+               mi_imagen= Image.open(ruta_deimagenes+'/'+ i)
+               mi_imagen.show()
+               for i in range(0,5):
+                   lista.append(raw_input("ingresar etiquetas: "))
+
+Numerodeosos=lista.count("gatos")
+print(Numerodeosos," son gatos")
+Numerodeperros=lista.count("perro")
+print(Numerodeperros," son perros")
+Numerodecasas=lista.count("patos")
+print(Numerodecasas,"son patos")
+Numerodefotos=lista.count("caballos")
+print(Numerodefotos," son caballos")
+Numerodecomputadoras=lista.count("chivos")
+print(Numerodecomputadoras," son chivos")
+Numerodepajaros=lista.count("pajaro")
+print(Numerodepajaros," son pajaros")
+Numerodearticulos=lista.count("vacas")
+print(Numerodearticulos," son vacas")
+                            
+                            
+                
+for (ruta, carpeta, imagen) in walk('ruta_deimagenes'):
+   print imagen
+
+    Lista_imagen = [imagen]
+    print Lista_imagen
